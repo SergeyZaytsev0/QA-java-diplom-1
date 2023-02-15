@@ -6,7 +6,6 @@ import praktikum.IngredientType;
 
 @RunWith(Parameterized.class)
 public class IngredientTypeTest {
-
     private final String expIngredientType;
 
     public IngredientTypeTest(String expIngredientType) {

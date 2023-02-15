@@ -21,7 +21,7 @@ public class Praktikum {
         burger.setBuns(buns.get(0));
 
         burger.addIngredient(ingredients.get(1));
-        burger.addIngredient(ingredients.get(4));
+        burger.addIngredient(ingredients.get(2));
         burger.addIngredient(ingredients.get(3));
         burger.addIngredient(ingredients.get(5));
 

@@ -14,14 +14,12 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class BurgerTest {
-
     @Mock
     private Bun bun;
     @Mock
     private List<Ingredient> mockIngredients;
     @Mock
     private Ingredient ingredient;
-
     private Burger burger;
 
     @Before
@@ -74,25 +72,20 @@ public class BurgerTest {
     @Test
     public void testGetReceipt() {
         StringBuilder receiptExpect = new StringBuilder();
-
         when(bun.getName()).thenReturn("Test");
         when(ingredient.getName()).thenReturn("Test");
         when(ingredient.getType()).thenReturn(IngredientType.FILLING);
         when(bun.getPrice()).thenReturn(100F);
         when(ingredient.getPrice()).thenReturn(100F);
-
         burger.setBuns(bun);
         burger.addIngredient(ingredient);
-
         String header = String.format("(==== %s ====)%n", bun.getName());
         String price = String.format("%nPrice: %f%n", burger.getPrice());
         String ingredient = String.format("= %s %s =%n", IngredientType.FILLING.toString().toLowerCase(), "Test");
-
         receiptExpect.append(header);
         receiptExpect.append(ingredient);
         receiptExpect.append(header);
         receiptExpect.append(price);
         assertEquals(receiptExpect.toString(), burger.getReceipt());
     }
-
 }

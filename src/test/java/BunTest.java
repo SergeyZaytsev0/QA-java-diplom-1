@@ -7,12 +7,10 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class BunTest {
-
     private final String name;
     private final float price;
     private final String expectedName;
     private final float expectedPrice;
-
 
     public BunTest(String name, float price, String expectedName, float expectedPrice) {
         this.name = name;
